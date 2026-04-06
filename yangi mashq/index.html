@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dark Hacker ⚠️</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Glitch fon chiziqlari */
+    body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+            to bottom,
+            rgba(0,255,0,0.05) 0px,
+            rgba(0,255,0,0.05) 1px,
+            transparent 2px,
+            transparent 6px
+        );
+        animation: scan 4s linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes scan {
+        from { transform: translateY(-100%); }
+        to   { transform: translateY(100%); }
+    }
+
+    .hacker {
+        width: 300px;
+        animation: glitch 2s infinite;
+        filter: drop-shadow(0 0 20px rgba(0,255,0,0.4));
+    }
+
+    @keyframes glitch {
+        0% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(2px, -2px); }
+        60% { transform: translate(-1px, 1px); }
+        80% { transform: translate(1px, -1px); }
+        100% { transform: translate(0); }
+    }
+</style>
+</head>
+<body>
+
+<!-- Hacker SVG (qora siluet) -->
+<svg class="hacker" viewBox="0 0 200 200">
+    <path fill="#000"
+        d="M100 20
+           C70 20 45 45 45 75
+           v20
+           c0 20 10 35 25 45
+           v20
+           h60
+           v-20
+           c15-10 25-25 25-45
+           V75
+           C155 45 130 20 100 20
+           Z"/>
+    <rect x="55" y="85" width="90" height="20" rx="5" fill="#000"/>
+</svg>
+
+<script>
+/* Matrix random glitch effect */
+setInterval(() => {
+    document.body.style.background =
+        Math.random() > 0.8 ? "#020" : "#000";
+}, 100);
+</script>
+
+</body>
+</html>

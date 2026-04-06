@@ -1,0 +1,119 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Star Trail ✨</title>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        background: black;
+        height: 100vh;
+        cursor: crosshair;
+    }
+
+    .star {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        animation: twinkle 1s forwards;
+    }
+
+    @keyframes twinkle {
+        0% {opacity: 0; transform: scale(0);}
+        50% {opacity: 1; transform: scale(1.5);}
+        100% {opacity: 0; transform: scale(0);}
+    }
+</style>
+</head>
+<body>
+
+<script>
+document.addEventListener('mousemove', e => {
+    for (let i = 0; i < 3; i++) { // 3 ta yulduz hosil qilamiz
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const size = Math.random() * 3 + 2;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.left = (e.clientX + (Math.random() * 20 - 10)) + 'px';
+        star.style.top = (e.clientY + (Math.random() * 20 - 10)) + 'px';
+        document.body.appendChild(star);
+        setTimeout(() => star.remove(), 1000);
+    }
+});
+</script>
+
+</body>
+</html> 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive Wall 🧱</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #333;
+        overflow: hidden;
+        font-family: sans-serif;
+    }
+
+    .wall {
+        display: grid;
+        grid-template-columns: repeat(20, 50px);
+        grid-template-rows: repeat(10, 50px);
+        gap: 2px;
+    }
+
+    .brick {
+        width: 50px;
+        height: 50px;
+        background: #b74f3f;
+        transition: background 0.3s, transform 0.3s;
+    }
+</style>
+</head>
+<body>
+
+<div class="wall"></div>
+
+<script>
+const wall = document.querySelector('.wall');
+
+// Bricklar yaratamiz
+for(let i = 0; i < 200; i++) {
+    const brick = document.createElement('div');
+    brick.classList.add('brick');
+    wall.appendChild(brick);
+}
+
+// Sichqoncha harakati bilan devorni o‘zgartirish
+document.addEventListener('mousemove', e => {
+    const bricks = document.querySelectorAll('.brick');
+    bricks.forEach(brick => {
+        const rect = brick.getBoundingClientRect();
+        const distX = e.clientX - (rect.left + rect.width/2);
+        const distY = e.clientY - (rect.top + rect.height/2);
+        const distance = Math.sqrt(distX*distX + distY*distY);
+        
+        // Masofaga qarab rang va kattalik o‘zgartiramiz
+        const intensity = Math.max(0, 100 - distance/5);
+        brick.style.background = `rgb(${183 + intensity/2}, ${79 + intensity/3}, ${63})`;
+        brick.style.transform = `scale(${1 + intensity/200})`;
+    });
+});
+</script>
+
+</body>
+</html>  

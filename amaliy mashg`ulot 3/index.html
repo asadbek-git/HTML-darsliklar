@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amaliy mashg`ulot 3</title>
+    <style>
+        table{
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th{
+            border: 1px solid black;
+        }
+        tr{
+            border: 1px solid black;
+        }
+        td{
+           border: 1px solid black; 
+        }
+        .sad{
+            margin-right: 15%;
+        }
+        .upload-box {
+            width: 300px;
+            height: 180px;
+            border: 3px solid #555;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Arial;
+            font-size: 18px;
+            color: #444;
+            margin: 40px auto;
+            cursor: pointer;}
+
+        .upload-box:hover {
+            border-color: #0099ff;
+            color: #0099ff;
+        }
+
+        input[type="file"] {
+            display: none;}
+            #messageBox {
+    width: 100%;           
+    max-width: 800px;    
+    height: 200px;         
+    font-size: 16px;       
+    padding: 10px;        
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;      
+}
+#box{
+    background-color: black;
+    color: white;
+}
+th{
+    background-color: #00d5ff3e;
+}
+.Exel{
+    background-color: #00c8ff52;
+}
+
+
+
+
+
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <h2>Job Application</h2>
+    <p>Please complete the form below to apply for a position with us.</p><br>
+    Full Name
+    <br><br>
+    <form action="/server.php" method="get">
+       <input type="text" name="first Name" id=" first Name"><br>
+        <label for="">first Name</label>
+       <br>
+         <input type="text" name="middle Name" id=" middle Name"><br>
+         <label for="">middle Name. </label>
+         <br>
+        <input type="text" name="last name" id="last name"><br>
+        <label for="">last name</label><br><br><br><br>
+body size *<br><br>
+<input type="cm"  height="Height" id="Height"><br>
+<label for="">Height</label><br><br>
+<input type="kg" weight="weight" id="weight"><br>
+<label for="">weight</label><br><br><br>
+
+birth date  <br><br>
+<input type="date month" id="month"><br>
+<label for=""> month</label><br>
+<input type="day" day id="day"><br>
+<label for="">day</label><br>
+<input type="year" year id="year"><br>
+<label for="">year</label><br><br><br>
+Family Status <br>
+
+<input type="checkbox">divorced <br>
+<input type="checkbox">Married <br>
+<input type="checkbox">Single <br>
+<input type="checkbox">Other <br>
+
+ <h3>Current Address </h3>
+<input type="text" placeholder="Bu yerga yozing..." style="width: 400px; height: 40px;">
+<h6>street address</h6>
+<input type="text" placeholder="Bu yerga yozing..." style="width: 400px; height: 40px;">
+<h6>street address line 2 </h6><br><br>
+<input type="text" placeholder="Bu yerga yozing..." style="width: 400px; height: 40px;">
+<h5>city</h5><br>
+<input type="text" placeholder="Bu yerga yozing..." style="width: 400px; height: 40px;">
+<h5>State / Province</h5><br>
+<input type="text" placeholder="Bu yerga yozing..." style="width: 800px; height: 40px;">
+<h5>Postal / Zip Code</h5><br>
+ <h3>Email Address</h3>
+ <input type="email" id="email" placeholder="ex:myname@example.com" style="width: 400px; height: 40px;"><br>
+ <label for="">email</label><br>
+ <h3>Phone Number</h3><br>
+ </pre><input type="number" placeholder="90"  style="width: 40px; height: 40px;">                 <input type="number" placeholder="9000909"  style="width: 280px; height: 40px;"></pre>
+<h5><pre>Area code               Phone Number </pre></h5><br>
+<h3>LinkedIn</h3><br>
+<input type="text" placeholder="" style="width: 400px; height: 40px;"><br>
+<h3>Experience</h3>
+<input type="text" placeholder="" style="width: 400px; height: 40px;">
+<hr>
+<h3>Position Applied</h3>
+<input type="" placeholder="Please select" style="width: 400px; height: 40px;"><br>
+<h3>How did you hear about us</h3>
+<input type="" placeholder="Please select" style="width: 400px; height: 40px;"><br>
+<h3>Available Start Date</h3>
+<input type="date" id="date"><br><br><br>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Beginner</th>
+            <th>Elementary</th>
+            <th>Advanced</th>
+            <th>Expert</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class=".Exel">Exel</td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+        </tr>
+        <tr>
+            <td class=".Exel">Word</td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+        </tr>
+        <tr>
+            <td class=".Exel">1C</td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+        </tr>
+        <tr>
+            <td class=".Exel">Programming Language</td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+        </tr>
+    </tbody>
+</table><br>
+<h3>Ability knowing English Language</h3>
+  <input type="radio" style="transform: scale(2);" class="sad">.        <input type="radio" style="transform: scale(2);" class="sad">     <input type="radio" style="transform: scale(2);" class="sad">.    <input type="radio" style="transform: scale(2);" class="sad"> <input type="radio" style="transform: scale(2);" class="sad">
+<pre>worst.  
+                                                                                                             best</pre><br>
+<h3>Applicant Document(Diploma, Certificate)</h3>   
+ <label for="fileInput" class="upload-box">
+        Browse files
+        
+        
+    </label>
+    <input type="file" id="fileInput"><br>
+    <h3>Upload Your Resume</h3>
+<label for="fileInput" class="upload-box">
+        Browse files
+        
+        
+    </label>
+    <input type="file" id="fileInput"><br>
+    <h3>Cover Letter</h3>
+    <textarea id="messageBox" rows="10" cols="50" placeholder=""></textarea><br>
+  </center> <button id="box"><h3>Apply</h3></button><center>
+
+
+
+</body>
+</html>

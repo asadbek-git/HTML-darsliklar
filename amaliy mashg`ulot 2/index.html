@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WOW Effect 😲</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: radial-gradient(circle at center, #111, #000);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    h1 {
+        font-size: 4rem;
+        text-align: center;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        to {
+            text-shadow: 0 0 30px #f0f, 0 0 60px #f0f;
+        }
+    }
+
+    .dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: cyan;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: fade 1s linear forwards;
+    }
+
+    @keyframes fade {
+        to {
+            opacity: 0;
+            transform: scale(3);
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>Move your mouse 🖱️</h1>
+
+<script>
+document.addEventListener("mousemove", e => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
+    document.body.appendChild(dot);
+
+    setTimeout(() => {
+        dot.remove();
+    }, 1000);
+});
+</script>
+
+</body>
+</html>
